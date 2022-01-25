@@ -25,36 +25,5 @@ pipeline
          }
         }
     }
-     stage('continous deploy')
-    {
-        steps
-        {
-         script
-         {
-         cicd.newdeploy("172.31.9.48","testapp") 
-         }
-        }
-    }
-     stage('continous testing')
-    {
-        steps
-        {
-         script
-         {
-         cicd.newgit('https://github.com/intelliqittrainings/FunctionalTesting.git')
-         cicd.runselinium("/home/ubuntu/.jenkins/workspace/declaretivepipeline1")
-         }
-        }
-    }
-    stage('continous delivery')
-    {
-        steps
-        {
-         script
-         {
-         cicd.newdeploy("172.31.7.105","prodapp") 
-         }
-        }
-    }
-} 
-}
+   }
+ }  
